@@ -1,0 +1,12 @@
+// cl-m3-input-field-stage-311: Test Suite
+import "../m3i_311.zk"
+
+fn test_run():
+    let inp = create_m3_input_311("Enter username")
+    if inp.max_length != 41: sys_exit(1)
+    if not m3_input_validate_len_311(10, inp.max_length): sys_exit(1)
+    if m3_input_validate_len_311(1000, inp.max_length): sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-m3-input-field-stage-311!")

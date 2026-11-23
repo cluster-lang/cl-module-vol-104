@@ -1,0 +1,12 @@
+// cl-m3-input-field-stage-680: Test Suite
+import "../m3i_680.zk"
+
+fn test_run():
+    let inp = create_m3_input_680("Enter username")
+    if inp.max_length != 30: sys_exit(1)
+    if not m3_input_validate_len_680(10, inp.max_length): sys_exit(1)
+    if m3_input_validate_len_680(1000, inp.max_length): sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-m3-input-field-stage-680!")
